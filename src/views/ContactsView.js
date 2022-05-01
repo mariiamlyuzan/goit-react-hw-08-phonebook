@@ -12,7 +12,16 @@ import { getContacts } from '../redux/contacts/contacts-selectors';
 export default function ContactsView() {
   const contacts = useSelector(getContacts);
   const dispatch = useDispatch();
-  useEffect(() => dispatch(contactsOperations.fetchContacts()), [dispatch]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const response = await dispatch(contactsOperations.fetchContacts());
+    }
+    fetchData();
+  }, [dispatch]);
+
+  // useEffect(() => dispatch(contactsOperations.fetchContacts()), [dispatch]);
+
   return (
     <Container>
       <Section>
