@@ -20,8 +20,6 @@ export default function ContactsView() {
     fetchData();
   }, [dispatch]);
 
-  // useEffect(() => dispatch(contactsOperations.fetchContacts()), [dispatch]);
-
   return (
     <Container>
       <Section>
