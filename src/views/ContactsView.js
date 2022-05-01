@@ -16,9 +16,12 @@ export default function ContactsView() {
   useEffect(() => {
     async function fetchData() {
       const response = await dispatch(contactsOperations.fetchContacts());
+      console.log(response);
     }
     fetchData();
   }, [dispatch]);
+
+  //useEffect(() => dispatch(contactsOperations.fetchContacts()), [dispatch]);
 
   return (
     <Container>
