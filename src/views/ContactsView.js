@@ -15,13 +15,10 @@ export default function ContactsView() {
 
   useEffect(() => {
     async function fetchData() {
-      const response = await dispatch(contactsOperations.fetchContacts());
-      console.log(response);
+      await dispatch(contactsOperations.fetchContacts());
     }
     fetchData();
   }, [dispatch]);
-
-  //useEffect(() => dispatch(contactsOperations.fetchContacts()), [dispatch]);
 
   return (
     <Container>
