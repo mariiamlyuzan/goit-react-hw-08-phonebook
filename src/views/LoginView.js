@@ -54,9 +54,9 @@ export default function LoginView() {
   const handleChange = ({ target: { name, value } }) => {
     switch (name) {
       case 'email':
-        return setEmail(value);
+        return setEmail(value.trim());
       case 'password':
-        return setPassword(value);
+        return setPassword(value.trim());
       default:
         return;
     }
@@ -81,6 +81,7 @@ export default function LoginView() {
           name="email"
           value={email}
           onChange={handleChange}
+          required
         />
 
         <Input
@@ -89,6 +90,7 @@ export default function LoginView() {
           name="password"
           value={password}
           onChange={handleChange}
+          required
         />
 
         <Button type="submit">Enter</Button>

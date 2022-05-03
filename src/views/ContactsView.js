@@ -19,7 +19,6 @@ export default function ContactsView() {
     }
     fetchData();
   }, [dispatch]);
-
   return (
     <Container>
       <Section>

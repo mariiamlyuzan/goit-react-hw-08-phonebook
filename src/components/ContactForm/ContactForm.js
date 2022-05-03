@@ -15,10 +15,10 @@ import contactsOperations from '../../redux/contacts/contacts-operations';
 export default function ContactForm() {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
-  //const [createContact, { isLoading }] = useCreateContactMutation();
+
   const contacts = useSelector(getContacts);
   const isLoading = useSelector(getLoading);
-  //const { data: contacts } = useFetchContactsQuery();
+
   const dispatch = useDispatch();
   const handleChange = e => {
     const { name, value } = e.currentTarget;
@@ -45,9 +45,13 @@ export default function ContactForm() {
       )
     ) {
       toast.error(`${name} is already in contacts.`);
+      setName('');
+      setNumber('');
       return;
     }
+
     dispatch(contactsOperations.addContact({ name, number }));
+
     setName('');
     setNumber('');
     toast.success(`${name} add to contacts`);

@@ -55,11 +55,11 @@ export default function RegisterView() {
   const handleChange = ({ target: { name, value } }) => {
     switch (name) {
       case 'name':
-        return setName(value);
+        return setName(value.trim());
       case 'email':
-        return setEmail(value);
+        return setEmail(value.trim());
       case 'password':
-        return setPassword(value);
+        return setPassword(value.trim());
       default:
         return;
     }
@@ -67,8 +67,9 @@ export default function RegisterView() {
 
   const handleSubmit = e => {
     e.preventDefault();
+
     dispatch(authOperations.register({ name, email, password }));
-    console.log({ name, email, password });
+
     setName('');
     setEmail('');
     setPassword('');
@@ -85,6 +86,7 @@ export default function RegisterView() {
           name="name"
           value={name}
           onChange={handleChange}
+          required
         />
 
         <Input
@@ -93,6 +95,7 @@ export default function RegisterView() {
           name="email"
           value={email}
           onChange={handleChange}
+          required
         />
 
         <Input
@@ -101,6 +104,7 @@ export default function RegisterView() {
           name="password"
           value={password}
           onChange={handleChange}
+          required
         />
 
         <Button type="submit">To register</Button>
