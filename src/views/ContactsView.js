@@ -8,8 +8,10 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import contactsOperations from '../redux/contacts/contacts-operations';
 import { getContacts } from '../redux/contacts/contacts-selectors';
+import { useTranslation } from 'react-i18next';
 
 export default function ContactsView() {
+  const { t } = useTranslation(['common']);
   const contacts = useSelector(getContacts);
   const dispatch = useDispatch();
 
@@ -22,11 +24,11 @@ export default function ContactsView() {
   return (
     <Container>
       <Section>
-        <h1 className="title">Phonebook</h1>
+        <h1 className="title">{t('phonebook')}</h1>
         <ContactForm />
       </Section>
       <Section>
-        <h2 className="title">Contacts</h2>
+        <h2 className="title">{t('contacts')}</h2>
         <Filter />
         {contacts && <ContactList contacts={contacts} />}
       </Section>

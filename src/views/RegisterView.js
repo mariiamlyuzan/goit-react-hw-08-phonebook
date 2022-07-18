@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { authOperations } from '../redux/auth';
+import { useTranslation } from 'react-i18next';
 
 const Form = styled.form`
   display: flex;
@@ -47,6 +48,7 @@ const Input = styled.input`
   margin-bottom: 20px;
 `;
 export default function RegisterView() {
+  const { t } = useTranslation(['common']);
   const dispatch = useDispatch();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -77,11 +79,11 @@ export default function RegisterView() {
 
   return (
     <Wrapper>
-      <Title>Registration</Title>
+      <Title>{t('register')}</Title>
 
       <Form onSubmit={handleSubmit} autoComplete="off">
         <Input
-          placeholder="Name"
+          placeholder={t('name')}
           type="text"
           name="name"
           value={name}
@@ -90,7 +92,7 @@ export default function RegisterView() {
         />
 
         <Input
-          placeholder="Email"
+          placeholder={t('email')}
           type="email"
           name="email"
           value={email}
@@ -99,7 +101,7 @@ export default function RegisterView() {
         />
 
         <Input
-          placeholder="Password"
+          placeholder={t('password')}
           type="password"
           name="password"
           value={password}
@@ -107,7 +109,7 @@ export default function RegisterView() {
           required
         />
 
-        <Button type="submit">To register</Button>
+        <Button type="submit">{t('to register')}</Button>
       </Form>
     </Wrapper>
   );

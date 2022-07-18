@@ -5,7 +5,8 @@ import { GlobalStyle } from './GlobalStyle';
 import { useSelector } from 'react-redux';
 import { authSelectors } from '../redux/auth';
 import UserMenu from './UserMenu/UserMenu';
-
+import BtnLng from './BtnLng';
+import { useTranslation } from 'react-i18next';
 const Nav = styled.nav`
   display: flex;
   gap: 20px;
@@ -45,6 +46,7 @@ const Title = styled.h1`
 `;
 
 export const AppBar = () => {
+  const { t } = useTranslation(['common']);
   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
   return (
     <Wrapper>
@@ -52,21 +54,23 @@ export const AppBar = () => {
       <Nav>
         {isLoggedIn ? (
           <>
-            <Logo to="/contacts">Contacts</Logo>
+            <Logo to="/contacts">{t('contacts')}</Logo>
             <UserMenu />
           </>
         ) : (
           <>
-            <Title>Contacts</Title>
+            <Title>{t('contacts')}</Title>
+
             <Box>
-              <Link to="/register">Registration</Link>
-              <Link to="/login"> Log In</Link>
+              <Link to="/register">{t('register')}</Link>
+              <Link to="/login">{t('login')}</Link>
             </Box>
           </>
         )}
       </Nav>
       <Suspense fallback="">
         <Outlet />
+        <BtnLng />
       </Suspense>
     </Wrapper>
   );

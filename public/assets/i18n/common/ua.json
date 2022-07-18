@@ -1,0 +1,15 @@
+{
+    "register": "Реєстрація",
+    "login": "Увійти",
+    "contacts": "Контакти",
+    "name": "Ім'я",
+    "number": "Номер",
+    "addContact" : "Додати контакт",
+    "email": "Електронна пошта",
+   "password": "Пароль",
+   "enter": "Увійти",
+   "Please register or log in !": "Будь ласка, зареєструйтеся або увійдіть!",
+   "to register": "РЕЄСТРУВАТИ",
+   "phonebook": "Телефонна книга",
+   "is already in contacts": "вже в контактах"
+}

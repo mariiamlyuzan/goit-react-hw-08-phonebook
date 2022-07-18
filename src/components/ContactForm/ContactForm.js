@@ -11,8 +11,9 @@ import {
   getLoading,
 } from '../../redux/contacts/contacts-selectors';
 import contactsOperations from '../../redux/contacts/contacts-operations';
-
+import { useTranslation } from 'react-i18next';
 export default function ContactForm() {
+  const { t } = useTranslation(['common']);
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
@@ -61,7 +62,7 @@ export default function ContactForm() {
     <>
       <form onSubmit={handleSubmit}>
         <label className={s.label}>
-          Name
+          {t('name')}
           <input
             type="text"
             name="name"
@@ -75,7 +76,7 @@ export default function ContactForm() {
         </label>
         <br />
         <label className={s.label}>
-          Number
+          {t('number')}
           <input
             type="tel"
             name="number"
@@ -96,7 +97,7 @@ export default function ContactForm() {
               ariaLabel="loading"
             />
           ) : (
-            'Add contact'
+            t('addcontact')
           )}
         </button>
       </form>

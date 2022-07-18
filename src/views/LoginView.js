@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { authOperations } from '../redux/auth';
-
+import { useTranslation } from 'react-i18next';
 const Form = styled.form`
   display: flex;
   flex-direction: column;
@@ -47,6 +47,7 @@ const Input = styled.input`
   margin-bottom: 20px;
 `;
 export default function LoginView() {
+  const { t } = useTranslation(['common']);
   const dispatch = useDispatch();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -72,11 +73,11 @@ export default function LoginView() {
 
   return (
     <Wrapper>
-      <Title>Log In</Title>
+      <Title>{t('login')}</Title>
 
       <Form onSubmit={handleSubmit} autoComplete="off">
         <Input
-          placeholder="Email"
+          placeholder={t('email')}
           type="email"
           name="email"
           value={email}
@@ -85,7 +86,7 @@ export default function LoginView() {
         />
 
         <Input
-          placeholder="Password"
+          placeholder={t('password')}
           type="password"
           name="password"
           value={password}
@@ -93,7 +94,7 @@ export default function LoginView() {
           required
         />
 
-        <Button type="submit">Enter</Button>
+        <Button type="submit">{t('enter')}</Button>
       </Form>
     </Wrapper>
   );

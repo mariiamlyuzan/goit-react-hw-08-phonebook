@@ -1,0 +1,16 @@
+{
+    "register": "Registration",
+    "login": "LogIn",
+    "contacts": "Contacts",
+    "name": "Name",
+    "number": "Number",
+   "addContact" : "Add contact",
+   "email": "Email",
+   "password": "Password",
+   "enter": "Enter",
+   "Please register or log in !": "Please register or log in !",
+   "to register": "TO REGISTER",
+   "phonebook": "Phonebook",
+   "is already in contacts": "is already in contacts"
+
+}

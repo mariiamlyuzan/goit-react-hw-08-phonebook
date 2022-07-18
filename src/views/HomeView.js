@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+import { useTranslation } from 'react-i18next';
 const Title = styled.p`
   font-weight: 200px;
   text-align: center;
@@ -9,5 +9,6 @@ const Title = styled.p`
 `;
 
 export default function HomeView() {
-  return <Title>Please register or log in !</Title>;
+  const { t } = useTranslation(['common']);
+  return <Title>{t('Please register or log in !')}</Title>;
 }
