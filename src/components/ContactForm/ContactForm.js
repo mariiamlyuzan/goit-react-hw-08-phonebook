@@ -97,7 +97,7 @@ export default function ContactForm() {
               ariaLabel="loading"
             />
           ) : (
-            t('addcontact')
+            t('addContact')
           )}
         </button>
       </form>
