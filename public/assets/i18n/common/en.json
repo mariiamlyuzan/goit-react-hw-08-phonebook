@@ -11,6 +11,11 @@
    "Please register or log in !": "Please register or log in !",
    "to register": "TO REGISTER",
    "phonebook": "Phonebook",
-   "is already in contacts": "is already in contacts"
+   "is already in contacts": "is already in contacts",
+   "Log Out": "Log Out",
+   "Hello": "Hello",
+   "Find contacts by name": "Find contacts by name",
+   "Deleting": "Deleting...",
+   "Delete": "Delete"
 
 }

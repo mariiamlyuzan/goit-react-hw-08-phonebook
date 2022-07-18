@@ -11,5 +11,10 @@
    "Please register or log in !": "Будь ласка, зареєструйтеся або увійдіть!",
    "to register": "РЕЄСТРУВАТИ",
    "phonebook": "Телефонна книга",
-   "is already in contacts": "вже в контактах"
+   "is already in contacts": "вже в контактах",
+   "Log Out": "Вийти",
+   "Hello": "Привіт",
+   "Find contacts by name": "Знайти контакт за ім'ям",
+   "Deleting": "Видалення...",
+   "Delete": "Видалити"
 }

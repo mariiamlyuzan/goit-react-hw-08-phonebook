@@ -5,7 +5,10 @@ import s from './ContactItem.module.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { getLoading } from '../../redux/contacts/contacts-selectors';
 import contactsOperations from '../../redux/contacts/contacts-operations';
+import { useTranslation } from 'react-i18next';
+
 const ContactItem = ({ name, number, id }) => {
+  const { t } = useTranslation(['common']);
   const dispatch = useDispatch();
   const isLoading = useSelector(getLoading);
 
@@ -19,7 +22,7 @@ const ContactItem = ({ name, number, id }) => {
         onClick={() => dispatch(contactsOperations.deleteContact(id))}
         disabled={isLoading}
       >
-        {isLoading ? 'Deleting...' : 'Delete'}
+        {isLoading ? t('Deleting...') : t('Delete')}
       </button>
     </>
   );

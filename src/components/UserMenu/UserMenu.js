@@ -1,7 +1,7 @@
 import { authSelectors, authOperations } from '../../redux/auth';
 import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
-
+import { useTranslation } from 'react-i18next';
 const Button = styled.button`
   height: 35px;
   width: 80px;
@@ -26,14 +26,17 @@ const Title = styled.span`
 `;
 
 export default function UserMenu() {
+  const { t } = useTranslation(['common']);
   const dispatch = useDispatch();
   const name = useSelector(authSelectors.getUsername);
 
   return (
     <div>
-      <Title>Hello,{name} </Title>
+      <Title>
+        {t('Hello')},{name}{' '}
+      </Title>
       <Button type="button" onClick={() => dispatch(authOperations.logOut())}>
-        Log Out
+        {t('Log Out')}
       </Button>
     </div>
   );
